@@ -1,0 +1,15 @@
+use Tienda;
+
+db.fabricante.insertMany([{Nombre:"Asus"}, {Nombre:"Lenovo"}, {Nombre:"Xiaomi"}]);
+
+db.producto.insertMany([{Nombre:"Portatil" , Precio:"1000"}, {Nombre:"Monitor" , Precio:"200"},{Nombre:"Impresora" , Precio:"500"}])
+
+
+
+db.producto.find();
+
+db.producto.find({Precio:{$lte:1000}});
+
+db.producto.deleteMany({Nombre:"Impresora"});
+
+db.producto.updateMany({},[{$set:{estado:"Activo"}}]);
